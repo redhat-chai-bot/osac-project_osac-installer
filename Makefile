@@ -29,7 +29,7 @@ wait-for-api: ## Wait for the Kubernetes API server to be consistently reachable
 .PHONY: wait-for-operators-namespaces
 wait-for-operators-namespaces: ## Wait for operator namespaces left Terminating by a prior uninstall
 	@bash -c 'source scripts/lib.sh && \
-		for ns in ansible-aap cert-manager-operator cert-manager openshift-storage metallb-system multicluster-engine openshift-cnv; do \
+		for ns in ansible-aap cert-manager-operator cert-manager openshift-storage metallb-system multicluster-engine openshift-cnv osac-kafka; do \
 			wait_for_namespace_cleanup "$$ns"; \
 		done'
 
